@@ -21,7 +21,7 @@ Route::get('/about', function () {
     return view('about', [
         "name" => "Dodi",
         "email" => "dodi@email.com",
-        "image" => "dodi.jpg",
+        "image" => "dodi.png",
         "title" => 'About'
     ]);
 });

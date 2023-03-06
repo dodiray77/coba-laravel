@@ -78,3 +78,7 @@ Route::get('post/{slug}', function ($slug) {
         "post" => $new_post
     ]);
 });
+
+Route::get('/coba', function () {
+    return view('coba', ["title" => 'Coba']);
+});

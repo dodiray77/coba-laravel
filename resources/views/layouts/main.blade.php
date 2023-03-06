@@ -15,7 +15,7 @@
 <body>
     <header>
         <!-- place navbar here -->
-        @include('partials.navbar');
+        @include('partials.navbar')
     </header>
     <main>
         <div class="container mt-4">

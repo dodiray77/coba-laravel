@@ -34,7 +34,7 @@ Route::get('/blog', [PostController::class, 'index']);
 
 // halaman single post
 
-Route::get('post/{slug}', [PostController::class, 'tampil']);
+Route::get('post/{post:slug}', [PostController::class, 'tampil']);
 
 Route::get('/coba', function () {
     return view('coba', ["title" => 'Coba']);

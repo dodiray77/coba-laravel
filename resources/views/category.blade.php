@@ -8,7 +8,7 @@
             <H2>
                 <a href="/post/{{ $post->slug }}">{{ $post['title'] }}</a>
             </H2>
-            <h5>By: {{ $post['author'] }}</h5>
+            <h5>By: <a href="" class="text-decoration-none">{{ $post->user->name }}</a></h5>
             <p>{{ $post->excerpt }}</p>
         </article>
     @endforeach

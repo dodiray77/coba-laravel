@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use App\Models\User;
+
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -11,9 +11,9 @@ class PostController extends Controller
     public function index()
     {
         return view('blog', [
-            "title" => 'Blog',
+            "title" => 'All Posts',
             // "posts" => Post::all()
-            "posts" => Post::latest()->get()
+            "posts" => Post::with(['author', 'category'])->latest()->get()
         ]);
     }
 
@@ -24,11 +24,11 @@ class PostController extends Controller
             "post" => $post
         ]);
     }
-    public function author(User $author)
-    {
-        return view('blog', [
-            'title' => "User Post",
-            "posts" => $author->post
-        ]);
-    }
+    // public function author(User $author)
+    // {
+    //     return view('blog', [
+    //         'title' => "Post By Author : $author->name",
+    //         "posts" => $author->post
+    //     ]);
+    // }
 }

@@ -1,13 +1,20 @@
 @extends('layouts.main')
 
 @section('container')
-<article>
-    <H2>{{ $post->title }}</H2>
-    <p class="text-decoration-none">By: <a href="">{{ $post->author->name }}</a> in <a href="/categories/{{ $post->category->slug }}">{{ $post->Category->name }}</a>
-    </p>
-    {!! $post->body !!}
-    <hr>
 
-    <a name="" id="" class="btn btn-primary" href="/blog" role="button">Back to Post</a>
-</article>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <H2 class="mb-3">{{ $post->title }}</H2>
+            <p class="text-decoration-none mb-3">By: <a href="">{{ $post->author->name }}</a> in <a href="/categories/{{ $post->category->slug }}">{{ $post->Category->name }}</a>
+            </p>
+            <img src="https://source.unsplash.com/1200x400?{{ $post->category->name}}" class="card-img-top img-fluid" alt="{{ $post->category->name}}">
+            <article class="my-4 fs-5">
+                {!! $post->body !!}
+            </article>
+
+            <a name="" id="" class="btn btn-primary" href="/blog" role="button">Back to Post</a>
+        </div>
+    </div>
+</div>
 @endsection

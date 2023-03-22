@@ -31,11 +31,13 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <form action="/logout" method="post">
-                            @csrf
-                            <button type="submit" class="dropdown-item"><i class="bi bi-door-closed-fill"></i> Logout</button>
-                        </form>
-                        <li></li>
+                        <li>
+                            <form action="/logout" method="post">
+                                @csrf
+                                <button type="submit" class="dropdown-item"><i class="bi bi-door-closed-fill"></i> Logout</button>
+                            </form>
+                        </li>
+
                     </ul>
                 </li>
                 @else
